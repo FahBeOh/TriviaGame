@@ -1,0 +1,51 @@
+body{
+    background: url("../images/brooklyn-nine-nine.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#content{
+    background-color: white;
+}
+
+.top-buffer{
+    margin: 110px;
+}
+
+.top-pad{
+    margin: 20px;
+}
+
+.bottom-pad{
+    margin: 20px;
+}
+
+.mid-pad{
+    margin: 10px;
+}
+
+#col-logo{
+    font-weight: bold;
+    font-size: 24px;
+    color: red;
+}
+
+#submitBtn{
+    margin: 10px;
+}
+
+#correct{
+    margin: 20px;
+    font-weight: bold;
+}
+
+#wrong{
+    margin: 20px;
+    font-weight: bold;
+}
+
+#terry{
+    margin: 20px;
+}
