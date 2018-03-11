@@ -1,5 +1,23 @@
+// Questions and radio buttons
+var a1 = $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question1' id ='q1' value='a'> <label class='form-check-label'> Cheddar </label>");
+var a2 = $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question1' value='b'> <label class='form-check-label'> Gouda </label>");
+var a3 = $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question1' value='c'> <label class='form-check-label'> Swiss </label>");
+var a4 = $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question1' value='d'> <label class='form-check-label'> Provolone </label>");
 
+var b1 = $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question2' value='c'> <label class='form-check-label'> Beef Jerky </label>");
+var b2 = $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question2' value='b'> <label class='form-check-label'> Cocoa Nibs </label>");
+var b3 = $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question2' id ='q2' value='a'> <label class='form-check-label'> Yogurt </label>");
+var b4 = $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question2' value='d'> <label class='form-check-label'> Pie </label>");
 
+var c1 = $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question3' value='b'> <label class='form-check-label'> Nicolas </label>");
+var c2 = $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question3' id ='q3' value='a'> <label class='form-check-label'> Nikolaj </label>");
+var c3 = $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question3' value='c'> <label class='form-check-label'> Nick </label>");
+var c4 = $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question3' value='d'> <label class='form-check-label'> Nancy </label>");
+
+var d1 = $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question4' value='d'> <label class='form-check-label'> It's fireproof! </label>");
+var d2 = $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question4' value='b'> <label class='form-check-label'> Magic </label>");
+var d3 = $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question4' value='c'> <label class='form-check-label'> Nobody Knows </label>");
+var d4 = $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question4' id ='q4' value='a'> <label class='form-check-label'> It never fully dries </label>");
 
 // Variables
 var time = 30
@@ -7,50 +25,30 @@ var correctAnswers = 0;
 var wrongAnswers = 0;
 
 // Countdown timer
-function countdown(){
-    if(time === -1){
+function countdown() {
+    if (time === -1) {
         clearTimeout(timerId);
         $("#content").empty();
         results();
         console.log(correctAnswers);
-    } else{
-    $("#col-logo").html("Remaining Time: " + time);
-    time--;
+    } else {
+        $("#col-logo").html("Remaining Time: " + time);
+        time--;
     }
 }
 
 // Submit button maker
-function btnmkr(){
+function btnmkr() {
     var btnDiv = $("<div class='col col-12 text-center' id='submitBtn'>")
     var btnn = $("<button type='button' class='btn btn-primary btn-lg' id='startButton'>Submit</button>")
     $("#buttonspace").append(btnDiv);
     btnDiv.append(btnn);
 }
 
-// Questions and radio buttons
-var a1= $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question1' value='a'> <label class='form-check-label'> Cheddar </label>");
-var a2= $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question1' value='b'> <label class='form-check-label'> Gouda </label>");
-var a3= $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question1' value='c'> <label class='form-check-label'> Swiss </label>");
-var a4= $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question1' value='d'> <label class='form-check-label'> Provolone </label>");
-
-var b1= $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question2' value='c'> <label class='form-check-label'> Beef Jerky </label>");
-var b2= $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question2' value='b'> <label class='form-check-label'> Cocoa Nibs </label>");
-var b3= $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question2' value='a'> <label class='form-check-label'> Yogurt </label>");
-var b4= $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question2' value='d'> <label class='form-check-label'> Pie </label>");
-
-var c1= $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question3' value='b'> <label class='form-check-label'> Nicolas </label>");
-var c2= $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question3' value='a'> <label class='form-check-label'> Nikolaj </label>");
-var c3= $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question3' value='c'> <label class='form-check-label'> Nick </label>");
-var c4= $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question3' value='d'> <label class='form-check-label'> Nancy </label>");
-
-var d1= $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question4' value='d'> <label class='form-check-label'> It's fireproof! </label>");
-var d2= $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question4' value='b'> <label class='form-check-label'> Magic </label>");
-var d3= $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question4' value='c'> <label class='form-check-label'> Nobody Knows </label>");
-var d4= $("<div class='form-check form-check-inline'> <input class='form-check-input' type='radio' name='question4' value='a'> <label class='form-check-label'> It never fully dries </label>");
 
 
 // Functions for questions and radio button answers
-function q1(){
+function q1() {
     a1;
     a2;
     a3;
@@ -62,7 +60,7 @@ function q1(){
     $("#buttonspace").append(a4);
 }
 
-function q2(){
+function q2() {
     b1;
     b2;
     b3;
@@ -74,7 +72,7 @@ function q2(){
     $("#buttonspace").append(b4);
 }
 
-function q3(){
+function q3() {
     c1;
     c2;
     c3;
@@ -86,7 +84,7 @@ function q3(){
     $("#buttonspace").append(c4);
 }
 
-function q4(){
+function q4() {
     d1;
     d2;
     d3;
@@ -99,20 +97,20 @@ function q4(){
 }
 
 // function for final page
-function results(){
+function results() {
     var correctDiv = $("<div class='col col-12 text-center' id='correct'>");
     var wrongDiv = $("<div class='col col-12 text-center' id='wrong'>");
     var picDiv = $("<div class='col col-12 text-center' id='pic'>");
-    correctDiv.append('Correct Asnwers: ' + correctAnswers);
+    var btnDivv = $("<div class='col col-12 text-center' id='restartDiv'>");
+    correctDiv.append('Correct Answers: ' + correctAnswers);
     wrongDiv.append('Wrong Answers: ' + wrongAnswers);
     picDiv.html("<img src='assets/images/brooklyn-nine-nine-fyc-event-arrivals.jpg' id='terry' class='img-fluid' alt='terry crews picture'>");
-    $("#content").append(correctDiv, wrongDiv, picDiv);
+    btnDivv.append("<button type='button' class='btn btn-primary btn-lg' id='restart'>Play Again!</button>");
+    $("#content").append(correctDiv, wrongDiv, picDiv, btnDivv);
 }
 
-
-
 // Game setup
-$("#startButton").click(function(){
+$("#startButton").click(function () {
     $("#buttonspace").empty();
     countdown();
     q1();
@@ -120,21 +118,44 @@ $("#startButton").click(function(){
     q3();
     q4();
     btnmkr();
-    $('.form-check input').on('click', function() {
-        if($(this).val() === 'a'){
+
+    timerId = setInterval(countdown, 1000);
+    var submit = $("#submitBtn").click(function () {
+        if ($("input[name='question1']:checked").val() === 'a') {
             correctAnswers++
             console.log(correctAnswers);
-        } else{
+        } else {
             wrongAnswers++
             console.log(wrongAnswers);
         }
-     });
-    
-    timerId = setInterval(countdown, 1000);
-    var submit = $("#submitBtn").click(function(){
+        if ($("input[name='question2']:checked").val() === 'a') {
+            correctAnswers++
+            console.log(correctAnswers);
+        } else {
+            wrongAnswers++
+            console.log(wrongAnswers);
+        }
+        if ($("input[name='question3']:checked").val() === 'a') {
+            correctAnswers++
+            console.log(correctAnswers);
+        } else {
+            wrongAnswers++
+            console.log(wrongAnswers);
+        }
+        if ($("input[name='question4']:checked").val() === 'a') {
+            correctAnswers++
+            console.log(correctAnswers);
+        } else {
+            wrongAnswers++
+            console.log(wrongAnswers);
+        }
         clearTimeout(timerId);
         $("#content").empty();
         results();
         console.log(correctAnswers);
+    })
+
+    $(document.body).on("click", "#restart", function () {
+        location.reload(true);
     })
 })
